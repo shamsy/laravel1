@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/layout.css" />
-    <title>Tutorial</title>
+    <title>My first Laravel project</title>
   </head>
   <body>
     @include("header")

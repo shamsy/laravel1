@@ -3,3 +3,5 @@
 .idea
 /bootstrap/compiled.php
 /vendor
+/nbproject/private/
+/nbproject

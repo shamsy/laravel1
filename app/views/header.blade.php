@@ -1,7 +1,13 @@
 @section("header")
   <div class="header">
     <div class="container">
-      <h1>Tutorial</h1>
+      <h1>My first Laravel project</h1> &nbsp;&nbsp;
+        <a href="{{ URL::to("/") }}">
+          Home
+        </a>
+        <a href="{{ URL::route("calculator/calculate") }}">
+          Calculator
+        </a>
       @if (Auth::check())
         <a href="{{ URL::route("user/logout") }}">
           logout
@@ -14,6 +20,7 @@
           login
         </a>
       @endif
+      
     </div>
   </div>
 @show
