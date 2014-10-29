@@ -97,7 +97,7 @@ class UserController
         return Redirect::route("user/profile");
       }
 
-      return Redirect::back()
+      return Redirect::route("user/login")
         ->withInput()
         ->with("error", Lang::get($response));
     }
