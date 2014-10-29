@@ -15,11 +15,11 @@ class UserController
           return Redirect::route("user/profile");
         }
 
-        return Redirect::back()->withErrors([
+        return Redirect::route("user/login")->withErrors([
           "password" => ["Credentials invalid."]
         ]);
       } else {
-        return Redirect::back()
+        return Redirect::route("user/login")
           ->withInput()
           ->withErrors($validator);
       }
@@ -60,12 +60,12 @@ class UserController
       $response = $this->getPasswordRemindResponse();
 
       if ($this->isInvalidUser($response)) {
-        return Redirect::back()
+        return Redirect::route("user/request")
           ->withInput()
           ->with("error", Lang::get($response));
       }
 
-      return Redirect::back()
+      return Redirect::route("user/request")
         ->with("status", Lang::get($response));
     }
 
