@@ -1,10 +1,16 @@
 <?php
 Route::get('/', 'HomeController@showWelcome');
 
-Route::any("/calculate", [
+
+Route::get("/calculate", [
+  "as"   => "calculation.calculate",
+  "uses" => "CalculationController@calculate"
+]);
+
+/*Route::any("/calculate", [
   "as"   => "calculator/calculate",
   "uses" => "CalculatorController@calculate"
-]);
+]);*/
 
 Route::any("/login", [
   "as"   => "user/login",
