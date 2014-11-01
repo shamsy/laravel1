@@ -40,3 +40,8 @@ Route::any("/reset/{token}", [
   "as"   => "user/reset",
   "uses" => "UserController@reset"
 ]);
+
+Route::get('/calculate/interests', [
+  'as' => 'calculate.interests',
+  'uses' => 'CalculationController@interests'
+]);

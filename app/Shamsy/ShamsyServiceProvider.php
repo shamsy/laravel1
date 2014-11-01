@@ -1,9 +1,7 @@
-<?php
+<?php namespace Shamsy;
 
-namespace Shamsy;
-
-use Illuminate\Support\ServiceProvider;
 use App;
+use Illuminate\Support\ServiceProvider;
 
 class ShamsyServiceProvider extends ServiceProvider {
 
@@ -15,7 +13,7 @@ class ShamsyServiceProvider extends ServiceProvider {
     public function register()
     {
         //App::bind('Shamsy\Contracts\CalculatorInterface', 'Shamsy\Calculator');
-        
+
         App::bind('Shamsy\Contracts\CalculatorInterface', function()
         {
            return new Calculator;

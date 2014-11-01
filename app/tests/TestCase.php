@@ -9,7 +9,6 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
         {
           parent::setUp();
 
-          $this->prepareForTests();
         }
 
          /**
@@ -25,7 +24,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
 		return require __DIR__.'/../../bootstrap/start.php';
 	}
-        
+
         /**
         * Migrate the database
         */

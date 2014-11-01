@@ -118,7 +118,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-                'Shamsy\ShamsyServiceProvider'
+        'Shamsy\ShamsyServiceProvider'
 
 	),
 
