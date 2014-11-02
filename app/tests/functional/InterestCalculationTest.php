@@ -14,4 +14,12 @@ class InterestCalculationTest extends TestCase {
         $this->assertEquals(23.089, $response->original);
         $this->assertInternalType('float', $response->original);
     }
+
+    /**
+     * @expectedException Shamsy\Exceptions\InvalidPriceException
+     */
+    public function test_fails_calculating_interest_with_non_numeric_price()
+    {
+        $response = $this->call('GET', 'calculate/interests', ['price' => 'aloha']);
+    }
 }

@@ -18,5 +18,7 @@ class ShamsyServiceProvider extends ServiceProvider {
         {
            return new Calculator;
         });
+
+        App::bind('Shamsy\Validators\Contracts\PriceValidatorInterface', 'Shamsy\Validators\PriceValidator');
     }
 }
