@@ -1,8 +1,21 @@
 <?php
 
-class UserController
-  extends Controller
-{
+use Shamsy\Repositories\Contracts\UserRepositoryInterface as Users;
+
+class UserController extends Controller {
+
+  /**
+   * @var Shamsy\Repositories\Contracts\UserRepositoryInterface
+   */
+  protected $users;
+
+  public function __construct(Users $users)
+  {
+    $this->users = $users;
+
+    parent::__construct();
+  }
+
   public function login()
   {
     if ($this->isPostRequest()) {

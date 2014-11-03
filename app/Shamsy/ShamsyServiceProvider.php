@@ -20,5 +20,6 @@ class ShamsyServiceProvider extends ServiceProvider {
         });
 
         App::bind('Shamsy\Validators\Contracts\PriceValidatorInterface', 'Shamsy\Validators\PriceValidator');
+        App::bind('Shamsy\Repositories\Contracts\UserRepositoryInterface', 'Shamsy\Repositories\UserRepository');
     }
 }
