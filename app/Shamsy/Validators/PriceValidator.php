@@ -1,27 +1,19 @@
 <?php namespace Shamsy\Validators;
 
 use Shamsy\Exceptions\InvalidPriceException;
-use Illuminate\Validation\Factory as ValidationFactory;
 
-class PriceValidator implements Contracts\PriceValidatorInterface {
-
-    protected $validator;
+class PriceValidator extends Validator implements Contracts\PriceValidatorInterface {
 
     protected $rules = [
         'price' => 'numeric'
     ];
 
-    public function __construct(ValidationFactory $validator)
-    {
-        $this->validator = $validator;
-    }
-
     public function validate($data)
     {
-        $validation = $this->validator->make($data, $this->rules);
+        $validation = $this->validation($data);
 
         if ($validation->passes()) return true;
 
-        throw new InvalidPriceException;
+        throw new InvalidPriceException($validation->messages()->all());
     }
 }
