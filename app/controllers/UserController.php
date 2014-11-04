@@ -12,8 +12,6 @@ class UserController extends Controller {
   public function __construct(Users $users)
   {
     $this->users = $users;
-
-    parent::__construct();
   }
 
   public function login()
